@@ -1,0 +1,57 @@
+{
+  "name": "buttercms",
+  "description": "CLI tool to work with ButterCMS",
+  "version": "0.0.1",
+  "author": "Fernando Doglio @deleteman",
+  "bin": {
+    "buttercms": "./bin/run"
+  },
+  "bugs": "https://github.com/deleteman/buttercms-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.1",
+    "@oclif/config": "^1.8.1",
+    "@oclif/plugin-help": "^2.1.2",
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.0",
+    "ncp": "^2.0.0",
+    "require-dir": "^1.1.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.19.0",
+    "globby": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/deleteman/buttercms-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "buttercms",
+    "plugins": [
+      "@oclif/plugin-help"
+    ],
+    "topics": {
+      "generate:blog": {
+        "description": "Generate the boilerplate code for a blog using ButterCMS on top of Express"
+      }
+    }
+  },
+  "repository": "deleteman/buttercms-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}

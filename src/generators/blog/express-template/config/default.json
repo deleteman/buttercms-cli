@@ -1,0 +1,5 @@
+{
+	"buttercms": {
+		"auth_token": "<your token>"
+	}
+}

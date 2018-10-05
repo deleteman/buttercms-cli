@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul
+    each post in posts
+        li
+            p
+                b Title: #{post.title}
+            p= post.summary
+            p
+                a(href="/blog/#{post.slug}") Read more
