@@ -28,7 +28,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`buttercms generate`](#buttercms-generate)
+* [`buttercms generate:blog`](#buttercms-generate)
 * [`buttercms help [COMMAND]`](#buttercms-help-command)
 
 ## `buttercms generate:blog`
@@ -44,10 +44,7 @@ OPTIONS
 
 ```
 
-_See code: [src/commands/generate.js](https://github.com/deleteman/buttercms-cli/blob/v0.0.1/src/commands/generate.js)_
 
-
-_See code: [src/commands/hello.js](https://github.com/deleteman/buttercms-cli/blob/v0.0.1/src/commands/hello.js)_
 
 ## `buttercms help [COMMAND]`
 
@@ -64,5 +61,4 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.2/src/commands/help.ts)_
 <!-- commandsstop -->
