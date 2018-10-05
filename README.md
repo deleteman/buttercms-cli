@@ -29,42 +29,23 @@ USAGE
 # Commands
 <!-- commands -->
 * [`buttercms generate`](#buttercms-generate)
-* [`buttercms hello`](#buttercms-hello)
 * [`buttercms help [COMMAND]`](#buttercms-help-command)
 
-## `buttercms generate`
+## `buttercms generate:blog`
 
 Describe the command here
 
 ```
 USAGE
-  $ buttercms generate
+  $ buttercms generate:blog
 
 OPTIONS
-  -n, --name=name  name to print
+  --for=target  Target tech stack to generate the blog for (currently available: express)
 
-DESCRIPTION
-  ...
-  Extra documentation goes here
 ```
 
 _See code: [src/commands/generate.js](https://github.com/deleteman/buttercms-cli/blob/v0.0.1/src/commands/generate.js)_
 
-## `buttercms hello`
-
-Describe the command here
-
-```
-USAGE
-  $ buttercms hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
 
 _See code: [src/commands/hello.js](https://github.com/deleteman/buttercms-cli/blob/v0.0.1/src/commands/hello.js)_
 
