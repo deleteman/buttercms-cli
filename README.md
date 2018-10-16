@@ -4,8 +4,8 @@ buttercms
 CLI tool to work with ButterCMS
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/buttercms.svg)](https://npmjs.org/package/buttercms)
-[![Downloads/week](https://img.shields.io/npm/dw/buttercms.svg)](https://npmjs.org/package/buttercms)
+[![Version](https://img.shields.io/npm/v/buttercms.svg)](https://npmjs.org/package/buttercms-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/buttercms.svg)](https://npmjs.org/package/buttercms-cli)
 [![License](https://img.shields.io/npm/l/buttercms.svg)](https://github.com/deleteman/buttercms-cli/blob/master/package.json)
 
 <!-- toc -->
