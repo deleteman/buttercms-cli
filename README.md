@@ -15,7 +15,7 @@ CLI tool to work with ButterCMS
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g buttercms
+$ npm install -g buttercms-cli
 $ buttercms COMMAND
 running command...
 $ buttercms (-v|--version|version)
