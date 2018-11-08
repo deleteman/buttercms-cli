@@ -3,15 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const requiredir = require("require-dir")
+const routes = requiredir("./routes")
 
-
-
-let routes = {
-	"/": require("./routes/index"),
-	"/authors": require("./routes/authors"),
-	"/categories": require("./routes/categories"),
-	"/blog": require("./routes/blog")
-}
 
 var app = express();
 
@@ -27,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 Object.keys(routes).forEach( route => {
 	console.log("Setting up route", route)
-	app.use(route, routes[route])
+	app.use("/" + route, routes[route])
 })
 
 // catch 404 and forward to error handler

@@ -5,8 +5,10 @@ const requiredir = require("require-dir")
 const BlogGenerators = requiredir("../../generators/blog")
 
 class BlogCommand extends Command {
+
 	
 	async run() {
+
 		const {flags} = this.parse(BlogCommand)
 
 		const targetGeneration = flags.for.toLowerCase().trim();
@@ -16,7 +18,7 @@ class BlogCommand extends Command {
 			return this.error (`Target not found '${targetGeneration}', please try one of the valid ones - ${BlogCommand.flags.for.options.join(",")} - `)
 		}
 
-		const gen = new BlogGenerators[targetGeneration]()
+		const gen = new BlogGenerators[targetGeneration](flags.auth_token)
 
 		gen.run();
 
@@ -27,6 +29,10 @@ BlogCommand.flags = {
 	for: flags.string({
 		description: 'Target destination for the generator command',
 		options: ['express'] //valid options
+	}),
+	auth_token: flags.string({ 
+		description: "Your AUTH token used to communicate with ButterCMS API",
+		required: true
 	})
 }
 

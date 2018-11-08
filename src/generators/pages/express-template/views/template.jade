@@ -1,0 +1,7 @@
+extend layout
+
+block content 
+	ul
+		each page in links
+			li
+				a(href="/" + page.slug)=page.slug

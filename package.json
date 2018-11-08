@@ -11,6 +11,7 @@
     "@oclif/command": "^1.5.1",
     "@oclif/config": "^1.8.1",
     "@oclif/plugin-help": "^2.1.2",
+    "buttercms": "^1.1.2",
     "chalk": "^2.4.1",
     "inquirer": "^6.2.0",
     "ncp": "^2.0.0",
@@ -44,6 +45,12 @@
     "topics": {
       "generate:blog": {
         "description": "Generate the boilerplate code for a blog using ButterCMS on top of Express"
+      },
+      "generate:page": {
+        "description": "Generates the boilerplate code for a single page using ButterCMS on top of Express"
+      },
+      "generate:pages": {
+        "description": "Generates the boilerplate code for a list of pages by type using ButterCMS on top of Express"
       }
     }
   },

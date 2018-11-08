@@ -5,10 +5,16 @@ const inquirer = require("inquirer")
 const chalk  = require("chalk")
 const fs = require("fs")
 const ncp = require("ncp").ncp
+const BaseGenerator = require("../../common/baseGenerator")
 
 const SOURCEEXPRESSBLOG = __dirname + "/express-template"
 
-module.exports = class ExpressBlogGenerator extends Command{
+module.exports = class ExpressBlogGenerator extends BaseGenerator{
+
+	constructor(auth_token) {
+		super()
+		this.auth_token = auth_token
+	}
 
 	prompts() {
 		this.log(`The following list of files will be created: 
@@ -90,16 +96,22 @@ Now you can:
 	*/
 	copyFiles(appname) {
 		const folderName = this.cleanAppName(appname)
-		fs.mkdir(folderName, (err) => {
+		fs.mkdir(folderName, (err) => { //create the new folder
 			if(err) { 
 				return this.log("There was a problem creating your blog's folder: " + chalk.red(err.toString()))
 			}
 			this.log("Folder - " + chalk.bold(folderName) + " -  " + chalk.green("successfully created!"))
-			ncp(SOURCEEXPRESSBLOG, folderName, (err) => {
+			ncp(SOURCEEXPRESSBLOG, folderName, (err) => { //copy all files
 				if(err) {
 					return this.log("There was a problem while copying your files: " + chalk.red(err))
 				}
-				this.printSuccessMessage(folderName)
+				let configFilePath = folderName + "/config/default.json"
+				fs.readFile(configFilePath, (err, configContent) => { //overwrite the configuration file, with the provided AUTH KEY
+					let newConfig = configContent.toString().replace("<your token>", this.auth_token)
+					fs.writeFile(configFilePath, newConfig, (err) => {
+						this.printSuccessMessage(folderName)
+					})
+				})
 			})
 		})
 	}
@@ -111,9 +123,4 @@ Now you can:
 		this.copyFiles(answer.appname)
 	}
 
-	async run() {
-		this
-			.prompts() //ask the questions
-			.then(this.execute.bind(this)) //execute the command
-	}
 }
